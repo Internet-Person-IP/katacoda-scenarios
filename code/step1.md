@@ -1,6 +1,5 @@
 # Step 1: Research
 
-## Research
 
 ### Docker
 You decided to do some research into the topic on Containerization. You did not have time to dig deep since the client is stressing you about some deadlines but essentially you understood that a container is similar to a virtual machine but there where some advantages. It builds a predictable enviroment where you run your code, which minimizes the issues with different OS version, config files and so on. The main technology to keep an eye on is Docker. The main concepts to look at seems to be the Dockerfile (describing the envrionment)¸ Image (a build of the environment) and container (Running the actual envrionment).
