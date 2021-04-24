@@ -1,4 +1,4 @@
 It is your first day as a consultant at Netlight and you just got a new assignment. Your manager has sent you as a consultant to a company that is trying to modernize its IT infrastructure. They also said they heard about this new topic called Containerization and they want to start leveraging that in their infrastructure with Kubernetes for the production environment. They also heard that it is common to implement something called CI/CD. You have now been tasked to solve this problem for them.
 
-You do not know any of these technologies. However you do know that leveraging Infrastructure as Code(IaC) is always a good practice when building a IT infrastructure. therefore you will use Terraform for allocating some of the infrastructure.
+You do not know any of these technologies. However, you do know that leveraging Infrastructure as Code(IaC) is always a good practice when building an IT infrastructure. therefore you will use Terraform for allocating some of the infrastructures.
  
