@@ -57,7 +57,8 @@
     }
   },
   "environment": {
-    "uilayout": "vscode-terminal-split"
+    "uilayout": "vscode-terminal-split",
+    "uieditorpath": "/root/GKE-CI-CD-Tutorial"
   },
   "backend": {
     "imageid": "ubuntu:2004"
