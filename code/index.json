@@ -2,7 +2,7 @@
   "title": "Building a Kubernetes Cluster with a small React Pod and CI/CD by leveraging Terraform",
   "description": "fewkjf",
   "difficulty": "Intermediate",
-  "time": "20",
+  "time": "20min",
   "details": {
     "steps": [
       {
@@ -47,8 +47,8 @@
       }
     ],
     "intro": {
-      "text": "intro.md",
-      "courseData": "initialize.sh"
+      "text": "intro.md"
+      
 
     },
     "finish": {
