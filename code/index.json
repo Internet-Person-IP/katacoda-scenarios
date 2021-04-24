@@ -1,6 +1,6 @@
 {
   "title": "Building a Kubernetes Cluster with a small React Pod and CI/CD by leveraging Terraform",
-  "description": "fewkjf",
+  "description": "In this tutorial you will be pretending to be a consultant that needs to setup the intial infrastucture for a company",
   "difficulty": "Intermediate",
   "time": "20min",
   "details": {
