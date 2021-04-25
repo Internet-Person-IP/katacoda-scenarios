@@ -16,4 +16,4 @@ git remote add prod <your repo>
 
 ```
 
-6. In the GCP Console you need to search for IAM. In here you will need to create a new IAM user.Go to GCP IAM console to fix IAM policy. You are going to add a new Service Account Key. Select JSON as Key. Click Create and save the JSON file.
+6. In the GCP Console you need to search for IAM. In here you will need to create a new IAM user.Go to GCP IAM console to fix IAM policy. You are going to add a new Service Account Key. Select JSON as Key. Click Create and save the JSON file. Drag and Drop it into the VSCode section of this interactive tutorial.
