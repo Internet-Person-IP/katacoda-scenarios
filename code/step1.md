@@ -1,4 +1,4 @@
-# Step 1: Research
+# Research
 
 
 ### Docker
@@ -14,7 +14,7 @@ The second concept that you were unfamiliar with was Kubernetes, which deals wit
 There are some more details but you are currently thinking eh why worry about those details right now? We will deal with them when we deal with them.
 
 ### CI/CD
-CI/CD just refers to us Contiously Testing and Deploying. In your experience as a consultant this often means that company what to be able to push to github and that code gets automatically tested and deployed to production. You decided to replicate that for this assignment.
+CI/CD just refers to us Contiously Testing and Deploying. In your experience as a consultant this often means that company want to be able to push to github and that code gets automatically tested and deployed to production. You decided to replicate that for this assignment.
 
 ### Terraform 
 Terraform is a technology you are familiar with. Terraform is an open-source infrastructure as code software tool. Terraform enables us to provision cloud resources using declarative configuration files.
