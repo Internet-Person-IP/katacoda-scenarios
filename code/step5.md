@@ -26,7 +26,9 @@ Lastly, you decided to open up the cloudbuild.yaml file in here you see the step
 4. Push: Which Pushes the Docker Image to your Container Registry
 5. GKE-deploy: Which changes the image in the deployment.yaml file to the one that is your most current build.
 
-Now you realize that you understand the CI/CD pipeline and that it is finally time for you to deploy to your Kubernetes cluster.
+There is one final thing you need to do and that is make the Container Regsitry public (in a real production environment you would not do this but it can be complicated to setup the correct permissons with GCP so I decided to skip it)
+
+Now you realize that you understand the CI/CD pipeline and that it is finally time for you to deploy to your Kubernetes cluster. 
 
 
 
