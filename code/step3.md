@@ -8,8 +8,38 @@ So you decided to copy it into your project. There are some main concepts that y
 
 You start by:
 
-> `cd terraform`{{copy}}
+> `mkdir && cd terraform`{{copy}}
 
+You first create a file called variables.tf which includes something like this:
+`variable "gcp_credentials"{
+    default = "~/.config/gcloud/exec-tut-cicd-kubernetes-react-c4c2dc25b7b6.json"
+}
+
+variable "gcp_project_id"{
+    default = "exec-tut-cicd-kubernetes-react"
+}
+
+variable "gcp_region" {
+    default = "europe-west2"
+}
+
+variable "gcp_gke_cluster_name" {
+    default = "gke-react-with-cicd"
+}
+
+variable "gcp_gke_zones"{
+    default = ["europe-west2-a","europe-west2-b", "europe-west2-c"]
+}
+
+variable "node_pool_name" {
+    default = "here-rests-my-little-pods"
+  
+}
+
+variable "gcp_service_account" {
+    default = "gcp-464@exec-tut-cicd-kubernetes-react.iam.gserviceaccount.com"
+  
+}`{{copy}}
 In here see a couple of files. The first file to look at is the variable file in here you there are a lot of variables stored that seem to be relevant to your project. There are however three things you need to change which is:
 
 - gcp_credentials
