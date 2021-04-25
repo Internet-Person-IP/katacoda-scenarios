@@ -17,7 +17,7 @@ We first need to initialize GCP.
 8. Download keys for this project. Use command below 
 ``` gcloud iam service-accounts keys create key.json  --iam-account=terraform-service-account@kubernetes-cicd-react.iam.gserviceaccount.com ```
 9. You enable the API neccasry for the project by typing in this command:
-``` gcloud services enable container.googleapis.com cloudbuild.googleapis.com sourcerepo.googleapis.com containeranalysis.googleapis.com ```
+``` gcloud services enable container.googleapis.com cloudbuild.googleapis.com sourcerepo.googleapis.com containeranalysis.googleapis.com compute.googleapis.com```
 10. Congradulations! You’ve made a huge step.
 
 
