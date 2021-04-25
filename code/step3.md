@@ -1,1 +1,44 @@
-# Building Kubernetes Cluster and CloudBuild Trigger with Terraform
+# Building Kubernetes Cluster Terraform
+
+So now you realize that you have a base for starting to build you application. You realize that you now need to create the Terraform template for GKE cluster. 
+
+After googling for hours you realize that you have found a tutorial that does something really similar to what you are trying to do. 
+
+So you decided to copy it into you project. There are some main concepts that you are familiar with, which are provider(describing which resource provider often cloud provider), variable(is used as env variables), modules(which are packages that makes development easier), resources (which are resources that you cloud provider offers) 
+
+You start by:
+
+> cd terraform
+
+In here see a couple of files. The first file to look at is the variable file in here you there are a lot of variables stored seem to be relevant to you project. There are however three things you need to change which is:
+
+- gcp_credentials
+- gcp_project_id
+- gcp_service_account
+
+
+Change them to match your project, credentials and service accounts.
+
+Next, you decided to look at provider which just describes which cloud provider you will be leveraging and setting some variables related to you project. Nothing really needs to be changed since you set the variables in the variable.tf
+
+You then decide to look at the main.tf file which has a lot going on. The main topics that you focused on was the module which was GKE and you realize that there is a huge level of costumizability for you that you can levarege later when ever you want to deploy the application again. For example such as load balancing, autoscaling, specific machine type, etc. You decided that what existed seemed appropriate you decided not to change anything.
+
+Next, you started thinking about actually building the infrastructure. There seems to be 4 different commands that are most essential to terraform.
+
+> terraform init (initilaze template by download all necceassry modules and resource, if new ones are added)
+> terraform plan (plan test if the infrastructure is possible to create and if there are some errors in the declarive files)
+> terraform apply (creates the actual infrastrucre in the cloud and might take a long time to do)
+> terraform destroy (destroys the entire infrastucture when it is no longer needed)
+
+
+You decided to do:
+
+> terraform init
+> terraform plan
+> terraform apply
+
+One thing you stumbled upon that you forgot was that when you apply a terraform apply with additional resources only the additional resources gets added you do need to completely create you infrastucutre again.
+
+Now you started to look into your google cloud console and if you search for Kubernetes and start to look for a cluster you realize that a cluster is up and running!
+
+Great now that the cluster is running it is important that you start looking into kubernetes and the entire process of CI/CD
