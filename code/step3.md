@@ -8,7 +8,7 @@ So you decided to copy it into your project. There are some main concepts that y
 
 You start by:
 
-> cd terraform
+> `cd terraform`{{copy}}
 
 In here see a couple of files. The first file to look at is the variable file in here you there are a lot of variables stored that seem to be relevant to your project. There are however three things you need to change which is:
 
@@ -25,17 +25,17 @@ You then decide to look at the main.tf file which has a lot going on. The main t
 
 Next, you started thinking about actually building the infrastructure. There seem to be 4 different commands that are most essential to terraform.
 
-> terraform init (initialize template by download all necessary modules and resource, if new ones are added)
-> terraform plan (plan test if the infrastructure is possible to create and if there are some errors in the declarative files)
-> terraform apply (creates the actual infrastructure in the cloud and might take a long time to do)
-> terraform destroy (destroys the entire infrastructure when it is no longer needed)
+> `terraform init`{{copy}} (initialize template by download all necessary modules and resource, if new ones are added)
+> `terraform plan`{{copy}} (plan test if the infrastructure is possible to create and if there are some errors in the declarative files)
+> `terraform apply`{{copy}} (creates the actual infrastructure in the cloud and might take a long time to do)
+> `terraform destroy`{{copy}} (destroys the entire infrastructure when it is no longer needed)
 
 
 You decided to do:
 
-> terraform init
-> terraform plan
-> terraform apply
+> `terraform init`{{copy}}
+> `terraform plan`{{copy}}
+> `terraform apply`{{copy}}
 
 One thing you stumbled upon that you forgot was that when you apply a terraform apply with additional resources only the additional resources gets added you do need to completely create your infrastructure again.
 
