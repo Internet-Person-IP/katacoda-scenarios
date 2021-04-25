@@ -11,7 +11,7 @@ You start by:
 > `mkdir && cd terraform`{{copy}}
 
 You first create a file called variables.tf which includes something like this:
-<pre data-target="clipboard">
+><pre>
 variable "gcp_credentials"{
     default = "~/.config/gcloud/exec-tut-cicd-kubernetes-react-c4c2dc25b7b6.json"
 }
@@ -42,6 +42,7 @@ variable "gcp_service_account" {
   
 }
 </pre>
+
 In here see a couple of files. The first file to look at is the variable file in here you there are a lot of variables stored that seem to be relevant to your project. There are however three things you need to change which is:
 
 - gcp_credentials
