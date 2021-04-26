@@ -16,9 +16,12 @@ We first need to initialize GCP.
 ``` gcloud iam service-accounts create terraform-service-account  --display-name="Terraform Builder" ```
 8. Download keys for this project. Use command below 
 ``` gcloud iam service-accounts keys create key.json  --iam-account=terraform-service-account@kubernetes-cicd-react.iam.gserviceaccount.com ```
-9. You enable the API neccasry for the project by typing in this command:
-``` gcloud services enable container.googleapis.com cloudbuild.googleapis.com sourcerepo.googleapis.com containeranalysis.googleapis.com compute.googleapis.com```
-10. Congradulations! You’ve made a huge step.
+9. You will then need to add a role to your IAM service account using this command:
+`gcloud projects add-iam-policy-binding some-project-name --member serviceAccount:terraform-service-account@kubernetes-cicd-react.iam.gserviceaccount.com --role=roles/owner`
+10. You will now need to create a billing account and also connect to your project. This needs to be done using the Google Console. This can be done watching this youtube video: [https://www.youtube.com/watch?v=uINleRduCWM](https://www.youtube.com/watch?v=uINleRduCWM)
+11. You enable the API neccasry for the project by typing in this command:
+``` gcloud services enable container.googleapis.com cloudbuild.googleapis.com sourcerepo.googleapis.com containeranalysis.googleapis.com compute.googleapis.com cloudresourcemanager.googleapis.com```. This step might take over 3-5minutes to run.
+12. Congradulations! You’ve made a huge step.
 
 
 # Create a Github Repository

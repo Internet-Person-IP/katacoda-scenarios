@@ -3,7 +3,7 @@ Kubernetes seems like quite a lot to learn but you decide to use to at least lea
 
 You will now create a small deployment, service and ingress rule.
 
-> `mkdir kubernetes && cd kubernetes`{{copy}}
+> `cd .. && mkdir kubernetes && cd kubernetes`{{copy}}
 
 **You first create a file called deployment.yaml in the kubernetes directory which includes something like this:**
 
@@ -23,7 +23,7 @@ spec:
         run: kube-cicd-react
     spec:
       containers:
-      - image: nginx:latest
+      - image: gcr.io/:PROJECT_ID/kube-cicd-react:COMMIT_SHA
         imagePullPolicy: IfNotPresent
         name: kube-cicd-react
         ports:
@@ -52,7 +52,7 @@ spec:
   type: LoadBalancer
 </pre>
 
-**The last file you will add is a service.yaml file in the kubernetes directory which includes something like this:**
+**The last file you will add is a ingress.yaml file in the kubernetes directory which includes something like this:**
 
 <pre class="file" data-target="clipboard">
 apiVersion: networking.k8s.io/v1
@@ -74,7 +74,7 @@ spec:
 
 
 The main way to deploy is to do:
-`kubectl apply -f <specific file>`
+`kubectl apply -f your-specific-file`
 
 
-However, you realize that seems like a bad idea to deploy right now. Rather you think it's a better idea to start building the CI/CD pipeline since you can just leverage that to build and run your application.
+**However, you realize that seems like a bad idea to deploy right now**. Rather you think it's a better idea to start building the CI/CD pipeline since you can just leverage that to build and run your application.

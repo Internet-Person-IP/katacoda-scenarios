@@ -2,8 +2,15 @@
 
 Now you realized that you needed some CI/CD for building your application. You look at the service called CloudBuild which seems to be a serverless CI/CD tool that you can leverage and works pretty smoothly with GKE since it is a google provided service.
 
-**The first thing you need to do is to connect the Repo to CloudBuild. This is done through the settings and enables us to actually connect to the Repo.**
+The first thing you need to do is to connect the Repo to CloudBuild. 
 
+**This is done through the settings and enables us to actually connect to the Repo.**
+**You need to go to your CloudBuild settings in the console.**
+**You go to the console, Click Triggers and click connect Repo**
+**Once you are there connect to the Repo that you created earlier**
+
+Next you need to enable GKE in CloudBuild.
+**Go to Settings on Cloud Build and enable Kubernetes Engine**
 You realize that you have no understanding of the CI/CD workflow for a Kubernetes cluster. You start looking around leveraging Google, StackOverflow, and your small faith in a higher being and start to understand that the CI/CD flow can be described however you want it. It is unique to each environment and there is no clear universal perfect way to do it. The only thing that CI/CD pipeline needs to do is test and deploy.
 
 You start reading more and realize that when you use a container you often have to push builds to something called a container registry and then the Kubernetes cluster will pull the latest build from that container registry. Essentially, in our pipeline we need to:
@@ -32,7 +39,14 @@ resource "google_cloudbuild_trigger" "filename-trigger" {
 </pre>
 
 
-In the new main.tf file you will see at the bottom a cloudbuild trigger that triggers when you push to the repo you cloned. However, you want it to trigger your production repo. **Change the production repo and the branch you want to the cloud build to trigger on. In this case change the owner and the name and the branch**
+In the new main.tf file you will see at the bottom a cloudbuild trigger that triggers when you push to the repo you cloned. However, you want it to trigger your production repo. **Change the production repo and the branch you want to the cloud build to trigger on. We recommend a branch called 'final' since it will be different from the intial repo and will not create any issues. In this case change the owner and the name and the branch**
+
+Now you need to apply the changes to terraform.
+
+**Traverse to the terraform folder and do**
+> `terraform init`{{copy}} <br/>
+> `terraform plan`{{copy}} <br/>
+> `terraform apply`{{copy}} <br/>
 
 **Lastly create a cloudbuild.yaml at the root of the project with this added:**
 <pre class="file" data-target="clipboard">
@@ -87,7 +101,7 @@ In here you see the step that was needed in your CI/CD pipeline. You will see so
 4. Push: Which Pushes the Docker Image to your Container Registry
 5. GKE-deploy: Which changes the image in the deployment.yaml file to the one that is your most current build.
 
-** There is one final thing you need to do and that makes the Container Registry public (in a real production environment you would not do this but it can be complicated to set up the correct permissions with GCP so I decided to skip it) **
+<!--**There is one final thing you need to do and that makes the Container Registry public (in a real production environment you would not do this but it can be complicated to set up the correct permissions with GCP so I decided to skip it)**-->
 
 Now you realize that you understand the CI/CD pipeline and that it is finally time for you to deploy to your Kubernetes cluster. 
 
