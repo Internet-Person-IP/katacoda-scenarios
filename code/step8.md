@@ -1,6 +1,6 @@
 # Clean-Up and Conclusion
 
-After working on this assignment from Netlight and the project you realize that this project was really helpful in enabling you to understand some aspects of DevOps.
+After working on this assignment from Netlight you realize that this project was really helpful in enabling you to understand some aspects of DevOps.
 
 In here you learned how to:
 
@@ -13,7 +13,7 @@ In here you learned how to:
 
 Finally, you can end this entire tutorial by going to the terraform directory and typing:
 
-> `terraform destroy` {{copy}}
+> `terraform destroy`{{copy}}
 
 which will destroy your entire infrastructure.
 

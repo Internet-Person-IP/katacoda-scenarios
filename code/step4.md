@@ -73,7 +73,7 @@ spec:
 </pre>
 
 
-The main way to deploy is to do:
+The main way to deploy is to do **(DO NOT TYPE THAT IN)**:
 `kubectl apply -f your-specific-file`
 
 
