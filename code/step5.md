@@ -4,7 +4,7 @@ Now you realized that you needed some CI/CD for building your application. You l
 
 The first thing you need to do is to connect the Repo to CloudBuild. 
 
-**This is done through the settings and enables us to actually connect to the Repo.**
+**This is done through the settings and enables us to actually connect to the Repo. This can be done in [here](https://console.cloud.google.com/cloud-build/triggers/connect)**
 **You need to go to your CloudBuild settings in the console.**
 **You go to the console, Click Triggers and click connect Repo**
 **Once you are there connect to the Repo that you created earlier**
@@ -28,10 +28,10 @@ We start reading a bit and this can be done by using something called a CloudBui
 <pre class="file" data-target="clipboard">
 resource "google_cloudbuild_trigger" "filename-trigger" {
   github {
-    owner = "Internet-Person-IP"
-    name   = "GKE-CI-CD-Tutorial"
+    owner = "your-git-user"
+    name   = "your-git-repo"
     push {
-      branch = "master"
+      branch = "final"
     }
   }
   filename = "cloudbuild.yaml"
@@ -39,7 +39,9 @@ resource "google_cloudbuild_trigger" "filename-trigger" {
 </pre>
 
 
-In the new main.tf file you will see at the bottom a cloudbuild trigger that triggers when you push to the repo you cloned. However, you want it to trigger your production repo. **Change the production repo and the branch you want to the cloud build to trigger on. We recommend a branch called 'final' since it will be different from the intial repo and will not create any issues. In this case change the owner and the name and the branch**
+In the new main.tf file you will see at the bottom a cloudbuild trigger that triggers when you push to the repo you cloned. However, you want it to trigger your production repo. <br/>
+
+**Change the production repo and the branch you want to the cloud build to trigger on. We recommend a branch called 'final' since it will be different from the intial repo and will not create any issues. In this case change the owner and the name and the branch**
 
 Now you need to apply the changes to terraform.
 
