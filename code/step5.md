@@ -4,13 +4,15 @@ Now you realized that you needed some CI/CD for building your application. You l
 
 The first thing you need to do is to connect the Repo to CloudBuild. 
 
-**This is done through the settings and enables us to actually connect to the Repo. This can be done in [here](https://console.cloud.google.com/cloud-build/triggers/connect)**
-**You need to go to your CloudBuild settings in the console.**
-**You go to the console, Click Triggers and click connect Repo**
-**Once you are there connect to the Repo that you created earlier**
+**This is done through the Cloud Build settings and enables us to actually connect to the Repo. This can be done in [here](https://console.cloud.google.com/cloud-build/triggers/connect)** <br/>
 
 Next you need to enable GKE in CloudBuild.
-**Go to Settings on Cloud Build and enable Kubernetes Engine**
+<br/>
+
+
+**You now need to enable Kubernetes Engine for your CloudBuild Service account which can be done [here](https://console.cloud.google.com/cloud-build/settings/service-account)**<br/>
+
+
 You realize that you have no understanding of the CI/CD workflow for a Kubernetes cluster. You start looking around leveraging Google, StackOverflow, and your small faith in a higher being and start to understand that the CI/CD flow can be described however you want it. It is unique to each environment and there is no clear universal perfect way to do it. The only thing that CI/CD pipeline needs to do is test and deploy.
 
 You start reading more and realize that when you use a container you often have to push builds to something called a container registry and then the Kubernetes cluster will pull the latest build from that container registry. Essentially, in our pipeline we need to:
@@ -102,8 +104,6 @@ In here you see the step that was needed in your CI/CD pipeline. You will see so
 3. Build: Which build the Docker Image
 4. Push: Which Pushes the Docker Image to your Container Registry
 5. GKE-deploy: Which changes the image in the deployment.yaml file to the one that is your most current build.
-
-**You now need to enable Kubernetes Engine for your CloudBuild Service account which can be done [here](https://console.cloud.google.com/cloud-build/settings/service-account)**
 
 **There is one final thing you need to do and that makes the Container Registry public which can be done [here](https://console.cloud.google.com/gcr/settings) (in a real production environment you would not do this but it can be complicated to set up the correct permissions with GCP so I decided to skip it)**
 
