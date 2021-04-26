@@ -11,7 +11,7 @@ In here you learned how to:
 5. Use that CI/CD pipeline to update some frontend code
 
 
-Finally, you can end this entire tutorial by going to the terraform directory and typing:
+**Finally, you can end this entire tutorial by going to the terraform directory and typing:**
 
 > `terraform destroy`{{copy}}
 
