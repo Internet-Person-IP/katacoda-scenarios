@@ -46,8 +46,8 @@ variable "gcp_service_account" {
 The first file to look at is the variable.tf file in here you there are a lot of variables stored that seem to be relevant to your project. **There are however three things you need to change which is:** 
 
 - gcp_credentials (which is the directory of the file storage)
-- gcp_project_id (which should be `kubernetes-cicd-react`)
-- gcp_service_account (which should be `terraform-service-account@kubernetes-cicd-react.iam.gserviceaccount.com`)
+- gcp_project_id (which should be `your_project_name`)
+- gcp_service_account (which should be `terraform-service-account@your_project_name.iam.gserviceaccount.com`)
 
 
 **Change them to match your project, credentials, and service accounts.**

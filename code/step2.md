@@ -2,22 +2,20 @@
 You start looking around in the project and you realize that it is a react project. That you need to deploy to GKE. You see in src/App.js this is a counter app that seems to be counting up. There should also be counting down feature but it should be added later when the CI/CD pipeline is done.
 ## GCP
 
-
-
 We first need to initialize GCP.
 
 1. Create a GCP account [here](https://cloud.google.com/free)
 2. Run command ```gcloud init``` in Console.
 3. Type y when the Console prints: You must log in to continue. Would you like to log in (Y/n)? 
 4. You’re supposed to open a link on your browser and log into your google cloud account. Parse the verification code in the link to Console and you will see: You are logged in as: [XXX@gmail.com].
-5. Now you can pick up an already existing project or create a new project. In our case, you may type in 2 to create a new project named [kubernetes-cicd-react].
-6. Now your local environment is connected to the correct project, as you can see: Your current project has been set to: [kubernetes-cicd-react].
+5. Now you can pick up an already existing project or create a new project. In our case, you may type in 2 to create a new project named [your_project_name].
+6. Now your local environment is connected to the correct project, as you can see: Your current project has been set to: [your_project_name] which you can pick. You might recive an error that resource already exist and that is because project_names need to unique across the entire GCP. So just create it again with a more unique ID.
 7. Create a IAM user for this project. In Console, you can use command 
 ``` gcloud iam service-accounts create terraform-service-account  --display-name="Terraform Builder" ```
 8. Download keys for this project. Use command below 
-``` gcloud iam service-accounts keys create key.json  --iam-account=terraform-service-account@kubernetes-cicd-react.iam.gserviceaccount.com ```
+``` gcloud iam service-accounts keys create key.json  --iam-account=terraform-service-account@your_project_name.iam.gserviceaccount.com ```
 9. You will then need to add a role to your IAM service account using this command:
-`gcloud projects add-iam-policy-binding kubernetes-cicd-react --member serviceAccount:terraform-service-account@kubernetes-cicd-react.iam.gserviceaccount.com --role=roles/owner`
+`gcloud projects add-iam-policy-binding your_project_name --member serviceAccount:terraform-service-account@your_project_name.iam.gserviceaccount.com --role=roles/owner`
 10. You will now need to create a billing account and also connect to your project. This needs to be done using the Google Console. This can be done on this page
 [here](https://console.cloud.google.com/home/dashboard?project=kubernetes-cicd-react) 
 11. You enable the API neccasry for the project by typing in this command:
