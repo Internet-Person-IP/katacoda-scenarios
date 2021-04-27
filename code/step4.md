@@ -5,6 +5,7 @@ You will now create a small deployment, service and ingress rule.
 
 > `cd .. && mkdir kubernetes && cd kubernetes`{{copy}}
 
+deployment.yaml seems to describe a pod and what kind of image it will be using, ports and so on. In this case we actually use gcr.io which can be viewed as a git repository for docker images.
 **You first create a file called deployment.yaml in the kubernetes directory which includes something like this:**
 
 <pre class="file" data-target="clipboard">
@@ -31,8 +32,7 @@ spec:
           protocol: TCP
 </pre>
 
-This creates a container with a small nginx server.
-
+service.yaml just describe the way we are going to connect to our pod. services in Kubernetes often describe additional features such as load balancing, self-healing etc.
 **Next you decide to create a service.yaml in the kubernetes directory which includes something like this:**
 
 
@@ -52,6 +52,7 @@ spec:
   type: LoadBalancer
 </pre>
 
+ingress.yaml describes a firewall for our application and helps us with accessing our pod.
 **The last file you will add is a ingress.yaml file in the kubernetes directory which includes something like this:**
 
 <pre class="file" data-target="clipboard">
