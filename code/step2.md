@@ -2,7 +2,7 @@
 You start looking around in the project and you realize that it is a react project. That you need to deploy to GKE. You see in src/App.js this is a counter app that seems to be counting up. There should also be counting down feature but it should be added later when the CI/CD pipeline is done.
 ## GCP
 
-We first need to initialize GCP.
+We first need to initialize GCP. You will need to add your credit card information in the google cloud for the tutorial to be possible. If you start a GCP account for the first time and start the tutorial you will recive a free 300 dollar credits you can use for 3 months which garantees that no funds will be drawn. After the tutorial is over you can just remove your card from GCP and there should be no issues.
 
 1. Create a GCP account [here](https://cloud.google.com/free)
 2. Run command ```gcloud init``` in Console.
@@ -17,7 +17,7 @@ We first need to initialize GCP.
 9. You will then need to add a role to your IAM service account using this command:
 `gcloud projects add-iam-policy-binding your_project_name --member serviceAccount:terraform-service-account@your_project_name.iam.gserviceaccount.com --role=roles/owner`
 10. You will now need to create a billing account and also connect to your project. This needs to be done using the Google Console. This can be done on this page
-[here](https://console.cloud.google.com/home/dashboard?project=kubernetes-cicd-react) 
+[here](https://console.cloud.google.com/home/dashboard) 
 11. You enable the API neccasry for the project by typing in this command:
 ``` gcloud services enable container.googleapis.com cloudbuild.googleapis.com sourcerepo.googleapis.com containeranalysis.googleapis.com compute.googleapis.com cloudresourcemanager.googleapis.com```. This step might take over 3-5minutes to run.
 12. Congradulations! You’ve made a huge step.
