@@ -9,13 +9,16 @@ We first need to initialize GCP. You will need to add your credit card informati
 3. Type y when the Console prints: You must log in to continue. Would you like to log in (Y/n)? 
 4. You’re supposed to open a link on your browser and log into your google cloud account. Parse the verification code in the link to Console and you will see: You are logged in as: [XXX@gmail.com].
 5. Now you can pick up an already existing project or create a new project. In our case, you may type in 2 to create a new project named [your_project_name].
+**Remember this project name, it will be needing it later on**
 6. Now your local environment is connected to the correct project, as you can see: Your current project has been set to: [your_project_name] which you can pick. You might recive an error that resource already exist and that is because project_names need to unique across the entire GCP. So just create it again with a more unique ID.
 7. Create a IAM user for this project. In Console, you can use command 
 ``` gcloud iam service-accounts create terraform-service-account  --display-name="Terraform Builder" ```
 8. Download keys for this project. Use command below 
 ``` gcloud iam service-accounts keys create key.json  --iam-account=terraform-service-account@your_project_name.iam.gserviceaccount.com ```
+**remember which directory this key is stored, this will be relevant later on**
 9. You will then need to add a role to your IAM service account using this command:
 `gcloud projects add-iam-policy-binding your_project_name --member serviceAccount:terraform-service-account@your_project_name.iam.gserviceaccount.com --role=roles/owner`
+**Remember this IAM service account, it will be needing it later on the IAM account in this case is `terraform-service-account@your_project_name.iam.gserviceaccount.com`**
 10. You will now need to create a billing account and also connect to your project. This needs to be done using the Google Console. This can be done on this page
 [here](https://console.cloud.google.com/home/dashboard) 
 11. You enable the API neccasry for the project by typing in this command:

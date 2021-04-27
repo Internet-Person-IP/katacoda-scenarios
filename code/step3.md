@@ -13,11 +13,11 @@ So you decided to copy it into your project. There are some main concepts that y
 **You first create a file called variables.tf in the terraform directory which includes something like this:**
 <pre class="file" data-target="clipboard">
 variable "gcp_credentials"{
-    default = "~/.config/gcloud/exec-tut-cicd-kubernetes-react-c4c2dc25b7b6.json"
+    default = "~/key.json"
 }
 
 variable "gcp_project_id"{
-    default = "exec-tut-cicd-kubernetes-react"
+    default = "your_project_name"
 }
 
 variable "gcp_region" {
@@ -38,19 +38,19 @@ variable "node_pool_name" {
 }
 
 variable "gcp_service_account" {
-    default = "gcp-464@exec-tut-cicd-kubernetes-react.iam.gserviceaccount.com"
+    default = "terraform-service-account@your_project_name.iam.gserviceaccount.com"
   
 }
 </pre>
 
 The first file to look at is the variable.tf file in here you there are a lot of variables stored that seem to be relevant to your project. **There are however three things you need to change which is:** 
 
-- gcp_credentials (which is the directory of the file storage)
+- gcp_credentials (which is stored in the key.json file you previosly created. Mostly likely the correct answer will be `"~/key.json"`)
 - gcp_project_id (which should be `your_project_name`)
 - gcp_service_account (which should be `terraform-service-account@your_project_name.iam.gserviceaccount.com`)
 
 
-**Change them to match your project, credentials, and service accounts.**
+**Change them to match your project name, the Key.json file, and IAM service account.**
 
 Next, you decided to look at a provider which just describes which cloud provider you will be leveraging and setting some variables related to your project. Nothing really needs to be changed since you set the variables in the variable.tf.
 
