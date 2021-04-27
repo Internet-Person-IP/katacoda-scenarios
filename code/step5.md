@@ -107,6 +107,7 @@ In here you see the step that was needed in your CI/CD pipeline. You will see so
 
 **There is one final thing you need to do and that makes the Container Registry public which can be done [here](https://console.cloud.google.com/gcr/settings) (in a real production environment you would not do this but it can be complicated to set up the correct permissions with GCP so I decided to skip it)**
 
+The reason we do this is to make it easier for our Kubernetes Cluster to access our Docker Image. In reality this is a secrity risk however since our application does not have real use it does not really make.
 
 
 Now you realize that you understand the CI/CD pipeline and that it is finally time for you to deploy to your Kubernetes cluster. 
