@@ -20,6 +20,6 @@ CI/CD just refers to us Contiously Testing and Deploying. In your experience as 
 Terraform is a technology you are familiar with. Terraform is an open-source infrastructure as code software tool. Terraform enables us to provision cloud resources using declarative configuration files.
 
 ### What now?
-Well, after doing all your research you realize that this entire things is going to be pain to do a Kubernetes cluster completely from scratch. You realize that you need something to deal with some of the more complex details. Enter Cloud and GCP. GCP offers a service called GKE which deals with some of the more complex topics of Kubernetes, so you decided:
+Well, after doing all your research you realize that this entire things is going to be pain to do a Kubernetes cluster completely from scratch. You realize that you need something to deal with some of the more complex details. Enter Cloud and GCP which is google cloud service. GCP offers a service called GKE which deals with some of the more complex topics of Kubernetes, so you decided:
 
 "LETS GO" - Da Baby
