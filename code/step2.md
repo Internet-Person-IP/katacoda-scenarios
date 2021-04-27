@@ -2,7 +2,7 @@
 You start looking around in the project and you realize that it is a react project. That you need to deploy to GKE. You see in src/App.js this is a counter app that seems to be counting up. There should also be counting down feature but it should be added later when the CI/CD pipeline is done.
 ## GCP
 
-We first need to initialize GCP. You will need to add your credit card information in the google cloud for the tutorial to be possible. If you start a GCP account for the first time and start the tutorial you will recive a free 300 dollar credits you can use for 3 months which garantees that no funds will be drawn. After the tutorial is over you can just remove your card from GCP and there should be no issues.
+We first need to initialize GCP. You will need to add your credit card information in the google cloud for the tutorial to be possible. If you start a GCP account for the first time and start the tutorial you will recive a free 300 dollar credits you can use for 3 months which garantees that no funds will be drawn. After the tutorial is over you can just remove your card from GCP and there should be no issues. Google requires credit card since some of their API such as Computing cost money and therefore they leverage the credit card to garentee that real people have access to the free tier and the platforms APIs.
 
 1. Create a GCP account [here](https://cloud.google.com/free)
 2. Run command ```gcloud init``` in Console.
